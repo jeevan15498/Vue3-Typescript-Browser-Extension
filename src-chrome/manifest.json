@@ -1,0 +1,78 @@
+{
+  "manifest_version": 3,
+  "default_locale": "en",
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "contextMenus",
+    "declarativeNetRequest",
+    "browsingData",
+    "notifications",
+    "alarms",
+    "scripting",
+    "tabs",
+    "nativeMessaging",
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://www.googleapis.com/",
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_icon": {}
+  },
+  "icons": {},
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "all_frames": true,
+      "css": [
+        "assets/css/basic.css"
+      ],
+      "js": [
+        "assets/js/basic.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "externally_connectable": {
+    "ids": [],
+    "matches": [],
+    "accepts_tls_channel_id": false
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "rule_set_1",
+        "enabled": true,
+        "path": "assets/rules_1.json"
+      }
+    ]
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "commands": {
+    "start-stop-excellent-data-filler-v4": {
+      "suggested_key": {
+        "default": "Alt+Q",
+        "windows": "Alt+Q"
+      },
+      "description": "Start"
+    }
+  }
+}

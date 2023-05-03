@@ -1,0 +1,40 @@
+{
+  "name": "vue3-typescript-web-extension",
+  "version": "0.0.1",
+  "scripts": {
+    "watch:chrome": "env-cmd -e dev,chrome,3,stable,offline vite build --mode development --watch --config utils/watch.js",
+    "watch:chrome:encode": "env-cmd -e dev,chrome,3,stable,offline,encode vite build --mode development --watch --config utils/watch.js",
+    "build:chrome": "env-cmd -e prod,chrome,3,stable,offline vite build --mode production --config utils/build.js",
+    "zip:chrome": "npm run build:chrome && env-cmd -e chrome,3,stable node utils/zip.js",
+    "watch:firefox": "env-cmd -e dev,firefox,3,stable,offline vite build --mode development --watch --config utils/watch.js",
+    "watch:firefox:encode": "env-cmd -e dev,firefox,3,stable,offline,encode vite build --mode development --watch --config utils/watch.js",
+    "build:firefox": "env-cmd -e prod,firefox,3,stable,offline vite build --mode production --config utils/build.js",
+    "zip:firefox": "npm run build:firefox && env-cmd -e firefox,3,stable node utils/zip.js",
+    "watch:edge": "env-cmd -e dev,edge,3,stable,offline vite build --mode development --watch --config utils/watch.js",
+    "watch:edge:encode": "env-cmd -e dev,edge,3,stable,offline,encode vite build --mode development --watch --config utils/watch.js",
+    "build:edge": "env-cmd -e prod,edge,3,stable,offline vite build --mode production --config utils/build.js",
+    "zip:edge": "npm run build:edge && env-cmd -e edge,3,stable node utils/zip.js",
+    "watch:opera": "env-cmd -e dev,opera,3,stable,offline vite build --mode development --watch --config utils/watch.js",
+    "watch:opera:encode": "env-cmd -e dev,opera,3,stable,offline,encode vite build --mode development --watch --config utils/watch.js",
+    "build:opera": "env-cmd -e prod,opera,3,stable,offline vite build --mode production --config utils/build.js",
+    "zip:opera": "npm run build:opera && env-cmd -e opera,3,stable node utils/zip.js",
+    "publish": "npm run build:chrome && node utils/publish.js"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jeevan Lal"
+  },
+  "dependencies": {
+    "env-cmd": "^10.1.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.3",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "terser": "^5.17.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.2",
+    "vue-tsc": "^1.4.2"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "appName": {
+    "message": "Vue 3 with Typescript - CTH"
+  },
+  "appShortName": {
+    "message": "Vue + Typescript"
+  },
+  "appDescription": {
+    "message": "Vue 3, Vite with Typescript Browser Extension Project"
+  }
+}
