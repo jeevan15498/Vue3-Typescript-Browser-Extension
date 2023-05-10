@@ -19,12 +19,17 @@
     "*://*/*"
   ],
   "background": {
-    "service_worker": "service-worker.js"
+    "service_worker": "service-worker.js",
+    "type": "module"
   },
   "action": {
     "default_icon": {}
   },
   "icons": {},
+  "options_ui": {
+    "page": "pages/options/options.html",
+    "open_in_tab": true
+  },
   "content_scripts": [
     {
       "matches": [

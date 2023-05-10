@@ -7,6 +7,9 @@
     "allowSyntheticDefaultImports": true,
   },
   "include": [
+    "src/types/global.d.ts",
+    "extension.ts",
+    "utils",
     "vite.config.ts"
   ]
 }
